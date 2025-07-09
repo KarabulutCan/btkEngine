@@ -7,7 +7,8 @@ bool PhysicsSystem::Init(float ppm, float gx, float gy) {
 }
 
 void PhysicsSystem::Shutdown() {
-	delete m_World; m_World == nullptr;
+	delete m_World;
+	m_World = nullptr;
 }
 
 void PhysicsSystem::Step(float dt) {
@@ -32,4 +33,22 @@ b2Body* PhysicsSystem::CreateBox(float px, float py, float w, float h, bool dyna
 	body->CreateFixture(&fd);
 	return body;
 
+}
+
+b2Body* PhysicsSystem::CreateCircle(float px, float py, float radius, bool dynamic, float density, float rest) {
+	b2BodyDef bd;
+	bd.type = dynamic ? b2_dynamicBody : b2_staticBody;
+	bd.position.Set(px / m_PPM, py / m_PPM);
+
+	b2CircleShape shape;
+	shape.m_radius = radius / m_PPM;
+
+	b2FixtureDef fd;
+	fd.shape = &shape;
+	fd.density = density;
+	fd.restitution = rest;
+
+	b2Body* body = m_World->CreateBody(&bd);
+	body->CreateFixture(&fd);
+	return body;
 }

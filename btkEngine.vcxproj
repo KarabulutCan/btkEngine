@@ -136,6 +136,7 @@
     <ClCompile Include="Engine\Assets\FontManager.cpp" />
     <ClCompile Include="Engine\Assets\SoundManager.cpp" />
     <ClCompile Include="Engine\Core\Animation.cpp" />
+    <ClCompile Include="Engine\Game\Ball.cpp" />
     <ClCompile Include="Engine\Game\Game.cpp" />
     <ClCompile Include="Engine\Core\PhysicsSystem.cpp" />
     <ClCompile Include="Engine\Game\Paddle.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="Engine\Assets\FontManager.h" />
     <ClInclude Include="Engine\Assets\SoundManager.h" />
     <ClInclude Include="Engine\Core\Animation.h" />
+    <ClInclude Include="Engine\Game\Ball.h" />
     <ClInclude Include="Engine\Game\Game.h" />
     <ClInclude Include="Engine\Core\PhysicsSystem.h" />
     <ClInclude Include="Engine\Core\RenderQueue.h" />

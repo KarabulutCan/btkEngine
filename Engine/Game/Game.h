@@ -9,6 +9,8 @@
 #include "../Assets/FontManager.h"
 #include "../Assets/SoundManager.h"
 #include "Paddle.h"
+#include "Ball.h"
+
 using namespace std;
 
 class Game
@@ -41,7 +43,20 @@ private:
 	RenderQueue m_RQ;
 	//Asset
 	Paddle m_PaddleL, m_PaddleR;
+	Ball m_Ball;
 	AssetManager m_Assets;
+	//Fonts
+	FontManager m_Fonts;
+
+	//Walls
+	b2Body* m_TopWall = nullptr;
+	b2Body* m_BottomWall = nullptr;
+
+	int m_ScoreLeft = 0;
+	int m_ScoreRight = 0;
+	SDL_Texture* m_ScoreTexL = nullptr;
+	SDL_Texture* m_ScoreTexR = nullptr;
+
 
 	//Sounds
 	SoundManager m_Sounds;
